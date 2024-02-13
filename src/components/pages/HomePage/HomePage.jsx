@@ -3,14 +3,14 @@ import fetchData from '../../../assets/api'
 import Header from "../../Header/Header";
 
 const HomePage = () => {
-    // const [trendingMovies, setTrendingMovies] = useState(null);
+    // const [trendingMovies, setTrendingMovies] = useState([]);
     // const [error, setError] = useState(null);
     // const [spiner, setSpiner] = useState(null);
 
     // useEffect(() => {
     //     const controller = new AbortController();
-    //     // setLoading(true);
-    //     // setError(false);
+    //     setLoading(true);
+    //     setError(false);
 
     //     async function fetchDataR() {
     //         try {
@@ -23,22 +23,8 @@ const HomePage = () => {
     //     fetchDataR();
     //     return () => { controller.abort() }
     // }, [])
-    
-    return (<Header/>)
+
+    return (<Header />)
 }
 
 export default HomePage
-
-
-
-
-// useEffect(()=> {
-//     async function fetchData = () => {
-//         try{
-//             const response = await axios.get()
-//         }
-//         catch (error) {}
-//     }
-//     fetchData();
-// }, [])
-// }

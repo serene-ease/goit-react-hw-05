@@ -2,7 +2,7 @@
 import { Suspense, lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 ///////Компоненты///////
-
+import fetchData from '../../assets/api.js'
 //////////Lazy//////////
 const HomePage = lazy(() =>  import("../pages/HomePage/HomePage") )
 const MoviesPage = lazy(() =>  import("../pages/MoviesPage/MoviesPage.jsx") )
@@ -12,7 +12,7 @@ import style from './App.module.css'
 ///////^Импорты^////////
 
 const App = () => {
-
+  fetchData()
   //// Lazy только код страници, обычные компоненты как обычные компоненты
 
 
