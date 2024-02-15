@@ -4,26 +4,27 @@ const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZmJmMWY5YWNjYzcyMmEyOTI5MjM5ZT
 //////////////////////////
 axios.defaults.baseURL = 'https://api.themoviedb.org/';
 axios.defaults.headers.common['Authorization'] = `Bearer ${API_KEY}`;
-
-const fetchData = async ({queryType, query, page = 1, accessLevel = 3}) => {
-    //////////////////////////////  кину swith case (либо свич в свич либо или при наличии пэйдж, нужен ли тип запроса...)
-    const queryPrepare = ({queryType, query, page = 1, accessLevel = 3}) => {
-
-            switch (queryType) {                
-                case "movies": return(`${accessLevel}/search/movie?query=${query}&include_adult=false&language=en-US&page=${page}`);
-                case "movie": return(`${accessLevel}/movie/${movieId}?language=en-US`);
-                case "credits": return(`${accessLevel}/movie/${movieId}/credits?language=en-US`);
-                case "reviews": return(`${accessLevel}/movie/${movieId}/reviews?language=en-US&${page}`);
-                default: return(`${accessLevel}/trending/movie/day?language=en-US`);
-            }
-
-        console.log('Query prepared to fetch:', preparedQuery)
-        return (preparedQuery)
+// async modQuery 
+const fetchData = async (modQuery) => {
+    console.log('mod', modQuery)
+    ////////////////////////////////////////
+    const queryPrepare = ({queryType, query = '', page = 1, movieId = null, accessLevel = 3, lang = 'en-US' }) => {
+        switch (queryType) {
+            case "movies": return (`${accessLevel}/search/movie?query=${query}&include_adult=false&language=${lang}&page=${page}`);
+            case "movie": return (`${accessLevel}/movie/${movieId}?language=${lang}`);
+            case "credits": return (`${accessLevel}/movie/${movieId}/credits?language=${lang}`);
+            case "reviews": return (`${accessLevel}/movie/${movieId}/reviews?language=${lang}&${page}`);
+            default: return (`${accessLevel}/trending/movie/day?language=${lang}`);
+        }
     }
+    const preparedQuery = queryPrepare(modQuery)
+    /////////////////////////////////////////
+    console.log('Function queryPrepare:', preparedQuery)
 
-    // const response = await axios.get(preparedQuery);
-    const response = await axios.get('3/trending/movie/day?language=en-US')
-        console.log("Response", respoprresponse)
+    // const response = await axios.get(preparedQuery, { signal: modQuery.signal });
+    const response = await axios.get(preparedQuery);
+    // const response = await axios.get('3/trending/movie/day?language=en-US')  
+    console.log("Response", response.data)
 }
 
 export default fetchData

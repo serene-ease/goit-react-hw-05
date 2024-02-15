@@ -14,8 +14,11 @@ const HomePage = () => {
 
     //     async function fetchDataR() {
     //         try {
-    //             const fethedData = await fetchData('',
-    //                 { signal: controller.signal })
+    //             const fethedData = await fetchData(
+    //                 {
+    //                     signal: controller.signal
+    //                 })
+    //             setTrendingMovies(fethedData)
     //         }
     //         catch { if (error.code !== 'ERR_CANCELED') { setError(true) } }
     //         finally { setSpiner(false) }
@@ -23,8 +26,19 @@ const HomePage = () => {
     //     fetchDataR();
     //     return () => { controller.abort() }
     // }, [])
+    // const att = { queryType: "movies", query: 'batman'}
+        const modQuery = {queryType: "movies", query: "Lion"}
+        fetchData(modQuery)
 
-    return (<Header />)
+    return (
+        <div>
+            <Header />
+            <ul>
+                <p>Homepage</p>
+                
+            </ul>
+        </div>
+    )
 }
 
 export default HomePage

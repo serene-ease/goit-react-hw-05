@@ -4,9 +4,11 @@ import SearchBar from '../../SearchBar/SearchBar'
 const MoviesPage = () => {
 
     return (
+
         <div>
-        <Header />
-        <SearchBar/>
+            <p>MoviesPage</p>
+            <Header />
+            <SearchBar />
         </div>
     )
 }
