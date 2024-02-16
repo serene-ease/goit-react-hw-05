@@ -4,10 +4,10 @@ import { Route, Routes } from 'react-router-dom'
 ///////Компоненты///////
 
 //////////pages//////////
-const HomePage = lazy(() => import("../pages/HomePage/HomePage"))
-const MoviesPage = lazy(() => import("../pages/MoviesPage/MoviesPage.jsx"))
-const CurrentMovie = lazy(() => import("../pages/CurrentMovie/CurrentMovie.jsx"))
-const NotFoundPage = lazy(() => import("../pages/NotFoundPage/NotFoundPage.jsx"))
+const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"))
+const MoviesPage = lazy(() => import("../../pages/MoviesPage/MoviesPage.jsx"))
+const CurrentMovie = lazy(() => import("../../pages/CurrentMovie/CurrentMovie.jsx"))
+const NotFoundPage = lazy(() => import("../../pages/NotFoundPage/NotFoundPage.jsx"))
 //////////Outlets////////
 const MovieReviews = lazy(() => import("../MovieReviews/MovieReviews.jsx"))
 const MovieCast = lazy(() => import("../MovieCast/MovieCast.jsx"))

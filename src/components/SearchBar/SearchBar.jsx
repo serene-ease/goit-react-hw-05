@@ -1,29 +1,23 @@
 import { useState } from "react"
+///////////////////////////////
+const SearchBar = ({onSubmit, callMovie=''}) => {
+    ////////////////////////////////
+    const [query, setQuery] = useState(callMovie)
+    // setQuery(callMovie)
+    // console.log('query',query)
+    const handleInputChange = event => { setQuery(event.target.value) }    
 
-const SearchBar = () => {
-    const [query, setQuery] = useState('');
-    const[page,setPage] =useState(1)
-    const[total,setTotal] =useState(0)
-    const[movies,setMovies] =useState([])
-
-    // const onSearch = async movieQuery =>{
-
-    //     const queryId = nanoid(7);
-    //     setQuery(`${queryId}+${movieQuery}`);
-    //     setPage(1);
-    //     setTotal(0);
-    //     setMovies([]);
-        
-
-    // }
-
-    const handleInputChange = event => { setQuery(event.target.value) }
-    const handleSubmit = event => { event.preventDefault(); onSearch(query); setQuery('') }
-    console.log('query', query)
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (query === '') return
+        onSubmit(query);
+        setQuery('');
+    }
+    ////////////////////////////////
     return (
         <form onSubmit={handleSubmit}>
-            <input type='text' onChange={handleInputChange}></input>
-            <button type='submit' >Search</button>
+            <input type='text' name="query" onChange={handleInputChange} autoComplete="off" autoFocus></input>
+            <button type='submit'>Search</button>
         </form>
     )
 }

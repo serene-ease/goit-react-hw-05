@@ -1,5 +1,5 @@
-import Header from "../../Header/Header";
-import TrendingList from "../../TrendingList/TrendingList";
+import Header from "../../components/Header/Header";
+import TrendingList from "../../components/TrendingList/TrendingList";
 
 const HomePage = () => {
     return (

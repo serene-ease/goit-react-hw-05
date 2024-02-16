@@ -4,6 +4,8 @@ import fetchData from "../../assets/api";
 import MovieItem from '../MovieItem/MovieItem';
 
 const TrendingList = () => {
+
+    //////////////////////////////////
     const [trendingMovies, setTrendingMovies] = useState([]);
     const [error, setError] = useState(null);
     const [spiner, setSpiner] = useState(null);
@@ -31,6 +33,7 @@ const TrendingList = () => {
         fetchDataR();
         return () => { controller.abort() }
     }, [])
+    //////////////////////////////////
     console.log('Trending', trendingMovies)
     return (
         <ul>
