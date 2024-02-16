@@ -6,7 +6,7 @@ axios.defaults.baseURL = 'https://api.themoviedb.org/';
 axios.defaults.headers.common['Authorization'] = `Bearer ${API_KEY}`;
 // async modQuery 
 const fetchData = async (modQuery) => {
-    console.log('mod', modQuery)
+    console.log('modQuery', modQuery)
     ////////////////////////////////////////
     const queryPrepare = ({queryType, query = '', page = 1, movieId = null, accessLevel = 3, lang = 'en-US' }) => {
         switch (queryType) {
@@ -22,9 +22,10 @@ const fetchData = async (modQuery) => {
     console.log('Function queryPrepare:', preparedQuery)
 
     // const response = await axios.get(preparedQuery, { signal: modQuery.signal });
-    const response = await axios.get(preparedQuery);
+    const response = await axios.get(preparedQuery, modQuery.abortController.signal );
     // const response = await axios.get('3/trending/movie/day?language=en-US')  
-    console.log("Response", response.data)
+    console.log("Response", response)
+    return response
 }
 
 export default fetchData
