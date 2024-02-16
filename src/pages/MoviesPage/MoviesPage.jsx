@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import fetchData from '../../assets/api'
 import Header from '../../components/Header/Header'
 import SearchBar from '../../components/SearchBar/SearchBar'
+import MoviesCatalogue from '../../components/MoviesCalogue/MoviesCatlogue';
 
 const MoviesPage = () => {
    //////////////////////////////////
@@ -30,8 +31,8 @@ const MoviesPage = () => {
                        abortController: controller
                    }                   
                )
-               console.log('callMovie', callMovie.data)
-            //    setMovies(prevMovies => [...prevMovies, ...fethedData.data.results])
+            //    console.log('callMovie', callMovie.data.results)
+               setMovies(prevMovies => [...prevMovies, ...fethedData.data.results])
             //    console.log('fethedData.data.results', fethedData.data.results)
             //    setPage(fetchedData.data.total_pages)
                // totalPages.current = fetchedData.data.total_pages;
@@ -56,7 +57,7 @@ const MoviesPage = () => {
             <p>MoviesPage</p>
             <Header />
             <SearchBar onSubmit={onSubmit} value={callMovie}/>
-            
+            <MoviesCatalogue movies={movies}/>            
         </div>
     )
 }
