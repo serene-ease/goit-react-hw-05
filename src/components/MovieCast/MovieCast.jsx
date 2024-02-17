@@ -20,7 +20,7 @@ const MovieCast = () => {
                         abortController: controller
                     }
                 )
-                   console.log('CAST fethedData', fethedData.data.cast)
+                //    console.log('CAST fethedData', fethedData.data.cast)
                    setCast(fethedData.data.cast)
             }
             catch { if (error.code !== 'ERR_CANCELED') { setError(true) } }

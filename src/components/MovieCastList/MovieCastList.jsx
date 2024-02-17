@@ -1,7 +1,7 @@
 import MovieCastItem from '../MovieCastItem/MovieCastItem'
 
 const MovieCastList = ({ items }) => {
-    console.log('items', items);
+    
     return (
         <ul >
             {items && items.map(item => (
