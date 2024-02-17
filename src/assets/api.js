@@ -11,9 +11,9 @@ const fetchData = async (modQuery) => {
     const queryPrepare = ({queryType, query = '', page = 1, movieId = null, accessLevel = 3, lang = 'en-US' }) => {
         switch (queryType) {
             case "movies": return (`${accessLevel}/search/movie?query=${query}&include_adult=false&language=${lang}&page=${page}`);
-            case "movie": return (`${accessLevel}/movie/${movieId}?language=${lang}`);
-            case "credits": return (`${accessLevel}/movie/${movieId}/credits?language=${lang}`);
-            case "reviews": return (`${accessLevel}/movie/${movieId}/reviews?language=${lang}&${page}`);
+            case "movie": return (`${accessLevel}/movie/${query}?language=${lang}`);
+            case "credits": return (`${accessLevel}/movie/${query}/credits?language=${lang}`);
+            case "reviews": return (`${accessLevel}/movie/${query}/reviews?language=${lang}&${page}`);
             default: return (`${accessLevel}/trending/movie/day?language=${lang}`);
         }
     }

@@ -9,7 +9,6 @@ const MoviesCatalogue = ({movies}) => {
             {
                 movies.map(movie => (
                     <li key={movie.id}>
-                        <p>{movie.title}</p>
                         <Link to={`/movies/${movie.id}`} state={location}>
                             <MovieItem movie={movie} />
                         </Link>

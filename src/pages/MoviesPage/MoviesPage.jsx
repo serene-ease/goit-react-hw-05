@@ -43,7 +43,7 @@ const MoviesPage = () => {
        }
        fetchDataR();
        return () => { controller.abort() }
-   }, [callMovie])
+   }, [callMovie, page])
 
    const onSubmit = (query) => {
     
