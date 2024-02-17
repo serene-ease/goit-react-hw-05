@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 
 const CurrentMovieItem = ({ movie: { title, poster_path, release_date, budget, vote_average, overview, genres } }) => {
-    // console.log(title, poster_path, release_date, budget, vote_average, overview, genres);
+   
 
 
     const defPoster = 'https://images.unsplash.com/photo-1589569334232-fdc917c38226?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NjI3OTV8MHwxfHNlYXJjaHw2MXx8bW92aWV8ZW58MHx8fHwxNzA4MDczMTkyfDA&ixlib=rb-4.0.3&q=80&w=1080';
@@ -25,14 +25,14 @@ const CurrentMovieItem = ({ movie: { title, poster_path, release_date, budget, v
                         </li>
                     ))}
                 </ul>
-                {/* <div >
+                <div >
                 <NavLink to='cast' >Cast</NavLink>
                 <NavLink to='reviews' >Reviews</NavLink>
             </div>
 
             <Suspense fallback={<p>Loading...</p>}>
                 <Outlet />
-            </Suspense> */}
+            </Suspense>
             </div>
         </div>
     )
