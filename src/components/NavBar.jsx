@@ -8,12 +8,11 @@ const NavBar = () => {
                     <NavLink to='/'>Home</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/movies'>Movies</NavLink>
+                    <NavLink to='/actors'>Actors</NavLink>
                 </li>
             </ul>
         </nav>
     )
 }
-
 
 export default NavBar
